@@ -1,0 +1,8 @@
+{% extends "todo/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="centered" style="font-size: large; font-family: Times New Roman;">Start Organizing your Life, Today !!!</div>
+    <div class="centered" style="top:32%">
+    	<a class="btn btn-primary btn-sm" href="{% url 'dashboard'%}" role="button">Get Started</a>
+    </div>
+{% endblock content %}

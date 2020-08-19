@@ -1,0 +1,30 @@
+{% extends "todo/base.html" %}
+{% block content %}
+	<div class="pt-5 m-4" style="top:40%;padding-left:325px">
+		<br>
+		<form method="POST" action="/dashboard/">
+			{% csrf_token %}
+			{{ form.title }}
+			<input type = "submit" class="btn btn-info btn-sm" value="Add Task" style="width: 80px;height: 30px;margin-top: -0.7%">
+		</form>
+		<br>
+		{% for task in tasks %}
+			<div style="text-align: left;">
+				{% if task.completed == True %}
+					<p>
+						<strike>
+							{{ task }}
+						</strike>
+					</p>
+				{% else %}
+					<p>
+						{{ task }}
+					</p>
+				{% endif %}
+				<a class="btn btn-primary btn-sm" href="{% url 'update' task.id %}" role="button">Edit Task</a>
+				<a class="btn btn-danger btn-sm" href="{% url 'delete' task.id %}" role="button">Delete Task</a>
+				<hr style="height:2px;border-width:0;color:gray;background-color:black;margin-right: 356px"> 
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}

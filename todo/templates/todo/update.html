@@ -1,0 +1,15 @@
+{% extends "todo/base.html" %}
+{% block content %}
+	<div class="pt-5 m-4" style="top:40%;padding-left:325px">
+		<form method="POST" action="">
+			{% csrf_token %}
+			<p>
+				Title : {{ form.title }}
+			</p>
+			<p>
+				Completed : {{ form.completed }}
+			</p>
+			<input type="submit" value="Submit" style="border: 2px solid;color:#20bf6b;font-weight: 600">
+		</form>
+	</div>
+{% endblock content %}
