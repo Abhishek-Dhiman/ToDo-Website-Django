@@ -1,2 +1,2 @@
 # ToDo-Website-Django
-Basic Todo website where users can add, create or delete tasks.
+Basic Todo website built in Django where users can add, create or delete tasks.
